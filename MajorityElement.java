@@ -15,6 +15,9 @@
 // -109 <= nums[i] <= 109
 
 class MajorityElement {
+  
+    // Using HashMap
+
     public int majorityElement(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
 
@@ -34,5 +37,32 @@ class MajorityElement {
             }
         }
         return -1;
+    }
+
+    // Moore's Voting Algorithm
+
+    public int majorityElement(int[] nums) {
+        int element = 0;
+        int count = 0;
+
+        for(int i=0;i<nums.length;i++) {
+            if(count == 0) {
+                element = nums[i];
+                count = 1;
+            }
+            else if(nums[i] == element) {
+                count++;
+            }
+            else {
+                count--;
+            }
+        }
+        count = 0;
+        for(int i=0;i<nums.length;i++) {
+            if(nums[i] == element) {
+                count++;
+            }
+        }
+        return (count > nums.length / 2) ? element : -1;
     }
 }

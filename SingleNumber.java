@@ -19,6 +19,9 @@
 // Each element in the array appears twice except for one element which appears only once.
 
 class SingleNumber {
+
+    // Using Sorting
+    
     public int singleNumber(int[] nums) {
         Arrays.sort(nums);
         int number = 0;
@@ -37,5 +40,15 @@ class SingleNumber {
             number = nums[0];
         }
         return number;
+    }
+
+    // Using XOR Operation
+
+    public int singleNumber(int[] nums) {
+        int xor = 0;
+        for(int i=0;i<nums.length;i++) {
+            xor = xor ^ nums[i];
+        }
+        return xor;
     }
 }

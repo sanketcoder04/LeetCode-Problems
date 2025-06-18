@@ -53,9 +53,9 @@
 // 0 <= target <= 106
 
 class FindElementsinaContaminatedBinaryTree {
-    TreeNode root;
+    private TreeNode root;
 
-    public FindElements(TreeNode root) {
+    public FindElementsinaContaminatedBinaryTree(TreeNode root) {
         this.root = root;
         populate(root, 0);
     }

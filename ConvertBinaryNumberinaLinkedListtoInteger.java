@@ -21,15 +21,15 @@ class ConvertBinaryNumberinaLinkedListtoInteger {
         Stack<Integer> stack = new Stack<>();
         ListNode temp = head;
 
-        while(temp != null){
+        while(temp != null) {
             stack.push(temp.val);
             temp = temp.next;
         }
         int result = 0;
         int i = 0;
-        while(!stack.empty()){
+        while(!stack.empty()) {
             int elem = stack.pop();
-            result += elem * Math.pow(2,i);
+            result += elem * Math.pow(2, i);
             i++;
         }
         return result;

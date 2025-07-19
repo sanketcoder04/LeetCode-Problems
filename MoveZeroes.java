@@ -15,6 +15,22 @@
 
 class MoveZeroes {
     public void moveZeroes(int[] nums) {
+        List<Integer> nonZero = new ArrayList<>();
+        for(int i=0;i<nums.length;i++) {
+            if(nums[i] != 0) {
+                nonZero.add(nums[i]);
+            }
+        }
+        for(int i=0;i<nonZero.size();i++) {
+            nums[i] = nonZero.get(i);
+        }
+        for(int i=nonZero.size();i<nums.length;i++) {
+            nums[i] = 0;
+        }
+    }
+
+    // Another Approach
+    public void moveZeroes(int[] nums) {
         int index = 0;
         int count = 0;
         for(int i=0;i<nums.length;i++) {

@@ -20,11 +20,11 @@
 
 class PowerofTwo {
     public boolean isPowerOfTwo(int n) {
-        double log2 = Math.log(n)/Math.log(2);
+        double log2 = Math.log(n) / Math.log(2);
         int limit = (int) Math.floor(log2);
 
-        for(int i=0;i<=limit;i++){
-            if(Math.pow(2,i) == n){
+        for(int i=0;i<=limit;i++) {
+            if(Math.pow(2, i) == n) {
                 return true;
             }
         }
